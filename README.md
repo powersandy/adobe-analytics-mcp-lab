@@ -1,1 +1,1 @@
-# adobe-analytics-mcp-lab
+# Adobe Analytics MCPs Lab
