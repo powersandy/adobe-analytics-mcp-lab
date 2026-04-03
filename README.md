@@ -150,8 +150,6 @@ This should process quickly, taking only a few seconds. Instead of clicking thro
 Authenticate to CJA using mcp_auth.
 ```
 
-<img width="467" height="62" alt="image" src="https://github.com/user-attachments/assets/7916f768-6d3a-4cdc-9124-88af0b779f8a" />
-
 As before, this should only take a few seconds. Cursor will hopefully make a call and produce this interactive result for you. Click *Authenticate*:
 
 <img width="697" height="353" alt="image" src="https://github.com/user-attachments/assets/b30325e0-4e10-4a4b-83f1-1d056a196a36" />
