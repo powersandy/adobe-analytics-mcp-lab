@@ -116,7 +116,7 @@ This step is a simple way to download files we need. In Github, the terminology 
 https://github.com/Adobe-Experience-Cloud/adobe-analytics-mcp-lab
 ```
 
-<img width="799" height="365" alt="Screenshot 2026-04-03 142349" src="https://github.com/user-attachments/assets/523a73e3-d6d3-4e20-acdc-50bfc0760d54" />
+<img width="788" height="253" alt="AdobeExpressPhotos_dd3e2cb9b9bc40b9836f684a3606c2fe_CopyEdited" src="https://github.com/user-attachments/assets/7cd08f8e-e1f7-44d4-9c91-62bf89799fcd" />
 
 3. Select any location, such as the desktop, for the repo to be saved.
 
