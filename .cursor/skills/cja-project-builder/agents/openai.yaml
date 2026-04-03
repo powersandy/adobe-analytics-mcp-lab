@@ -1,0 +1,4 @@
+interface:
+  display_name: "CJA Project Builder"
+  short_description: "Canonical CJA Workspace project creation"
+  default_prompt: "Use $cja-project-builder to build a CJA Workspace project from my spec."

@@ -1,0 +1,99 @@
+{
+  "version": "96",
+  "workspaces": [
+    {
+      "id": "starter-workspace",
+      "name": "",
+      "panels": [
+        {
+          "id": "starter-panel",
+          "name": "Starter Panel",
+          "type": "panel",
+          "dateRange": {
+            "__entity__": true,
+            "type": "DateRange",
+            "__metaData__": {
+              "definition": "td-29d/td+1d"
+            }
+          },
+          "subPanels": [
+            {
+              "id": "starter-table",
+              "name": "Starter Table",
+              "type": "genericSubPanel",
+              "linkedSourceId": "",
+              "position": {
+                "x": 0,
+                "y": 0,
+                "width": 100,
+                "autoSize": true
+              },
+              "reportlet": {
+                "type": "FreeformReportlet",
+                "name": "Starter Table",
+                "columnTree": {
+                  "nodes": [
+                    {
+                      "component": {
+                        "id": "metrics/occurrences",
+                        "__entity__": true,
+                        "type": "Metric"
+                      },
+                      "name": "Events"
+                    },
+                    {
+                      "component": {
+                        "id": "metrics/visitors",
+                        "__entity__": true,
+                        "type": "Metric"
+                      },
+                      "name": "People"
+                    }
+                  ]
+                },
+                "freeformTable": {
+                  "dimensionSettings": [
+                    {
+                      "dimension": {
+                        "id": "variables/daterangeday",
+                        "__entity__": true,
+                        "type": "Dimension"
+                      },
+                      "id": "variables/daterangeday"
+                    }
+                  ],
+                  "pagination": {
+                    "currentPage": 0,
+                    "viewBy": 10
+                  },
+                  "sort": {
+                    "asc": false,
+                    "columnId": "0",
+                    "labelColumn": true
+                  }
+                }
+              }
+            },
+            {
+              "id": "starter-chart",
+              "name": "Starter Chart",
+              "type": "genericSubPanel",
+              "linkedSourceId": "starter-table",
+              "position": {
+                "x": 0,
+                "y": 320,
+                "width": 100,
+                "autoSize": true
+              },
+              "visualizationIndex": 1,
+              "reportlet": {
+                "type": "BarReportlet",
+                "name": "Starter Chart"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "operations": [
+    {
+      "type": "replace_component_id",
+      "from": "variables/69baecb8acda87eec3bf30d2.productCategory",
+      "to": "variables/productListItems._experienceshowcase.core.mainCategory",
+      "new_name": "Product Category [multi]"
+    },
+    {
+      "type": "replace_inline_date_range",
+      "definition": "2026-03-04T00:00:00/2026-03-23T23:59:59"
+    },
+    {
+      "type": "rename_panel",
+      "from": "Daily trajectory - table + linked line",
+      "to": "Daily trajectory - patched"
+    }
+  ]
+}
