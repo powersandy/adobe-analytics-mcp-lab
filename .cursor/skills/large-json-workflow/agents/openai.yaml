@@ -1,0 +1,4 @@
+interface:
+  display_name: "Large JSON Workflow"
+  short_description: "Inspect and diff large JSON safely"
+  default_prompt: "Use $large-json-workflow to inspect, compare, and summarize large JSON structures."
