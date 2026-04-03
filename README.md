@@ -170,10 +170,12 @@ What data views can I access?
 
 If Cursor returns a small list including the L611 data view, then you are ready! *Leave the Cursor app alone until we get to the MCP tasks in a few minutes.*
 
-**Problems connecting?**
-If any of the steps above didn't work, here are the manual click instructions to ensure you are setup for Cursor.
+<img width="461" height="151" alt="AdobeExpressPhotos_bfd296436c9d4730b877c53442b6d399_CopyEdited" src="https://github.com/user-attachments/assets/e4ff7d01-62d5-4630-9813-55ce9d40e013" />
 
 ### Manual setup instructions ###
+
+**Problems connecting?**
+If any of the steps above didn't work, here are the manual click instructions to ensure you are setup for Cursor.
 
 .... INSTRUCTIONS WILL GO HERE - SETTINGS > MCP, CONNECT, ETC. ....
 
