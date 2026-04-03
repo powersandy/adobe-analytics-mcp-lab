@@ -160,7 +160,7 @@ As before, this should only take a few seconds. Cursor will hopefully make a cal
 
 5. On the following screen, click *Allow access*:
 
-<img width="415" height="581" alt="AdobeExpressPhotos_486ff0ad00d24182acd15b96b99c631a_CopyEdited" src="https://github.com/user-attachments/assets/43308710-2916-40fe-a2bc-1bbb0ce4ce6e" />
+<img width="788" height="253" alt="AdobeExpressPhotos_dd3e2cb9b9bc40b9836f684a3606c2fe_CopyEdited" src="https://github.com/user-attachments/assets/95cafa0a-4e2c-4e76-b4b4-94b2db3e8cd1" />
 
 Now, Cursor should say some positive comments about being connected. If so, you can confirm the connection to CJA is active with a prompt like this:
 
