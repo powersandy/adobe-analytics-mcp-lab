@@ -116,7 +116,7 @@ This step is a simple way to download files we need. In Github, the terminology 
 https://github.com/Adobe-Experience-Cloud/adobe-analytics-mcp-lab
 ```
 
-<img width="788" height="253" alt="AdobeExpressPhotos_dd3e2cb9b9bc40b9836f684a3606c2fe_CopyEdited" src="https://github.com/user-attachments/assets/7cd08f8e-e1f7-44d4-9c91-62bf89799fcd" />
+<img width="529" height="84" alt="AdobeExpressPhotos_26e57926bbcc47c58cfd164169b25eb8_CopyEdited" src="https://github.com/user-attachments/assets/e95c2f8d-bd7b-494b-87a5-e32dd30d68d4" />
 
 3. Select any location, such as the desktop, for the repo to be saved.
 
@@ -140,7 +140,7 @@ Now, we just need to tell Cursor how to reach CJA and help us connect.
 Add my cja mcp server to the global Cursor settings.
 ```
 
-<img width="479" height="89" alt="image" src="https://github.com/user-attachments/assets/68c09b22-04b5-4cf1-8bc4-0ed4fd7fd990" />
+<img width="479" height="89" alt="AdobeExpressPhotos_dfbdba47b8514d9b95b3c51d9ed23ac6_CopyEdited" src="https://github.com/user-attachments/assets/d7b14b05-938c-41d3-8dc9-1bb864527f9d" />
 
 This should process quickly, taking only a few seconds. Instead of clicking through Settings menus, we are using the downloaded files and the Composer agent in Cursor to automate setup.
 
@@ -152,7 +152,7 @@ Authenticate to CJA using mcp_auth.
 
 As before, this should only take a few seconds. Cursor will hopefully make a call and produce this interactive result for you. Click *Authenticate*:
 
-<img width="697" height="353" alt="image" src="https://github.com/user-attachments/assets/b30325e0-4e10-4a4b-83f1-1d056a196a36" />
+<img width="478" height="207" alt="AdobeExpressPhotos_b0c2b17aff54421b87bf69f9a614765a_CopyEdited" src="https://github.com/user-attachments/assets/27aa4344-1714-4cff-9b5d-7c368e90c9b3" />
 
 4. On web auth, select *Experience Showcase* (if asked) and click OK.
 
