@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"CJA": {
+			"type": "streamable-http",
+			"url": "https://mcp-gateway.adobe.io/cja/mcp"
+		}
+	}
+}
