@@ -92,11 +92,93 @@ CJA MCP SERVER — natural language access to your CJA data
 
 ---
 
-## CONFIG - Clone the git repo
+## Environment setup
 
+To prepare our environment today using *Cursor* we have a few setup steps to follow. Begin these steps as soon as you arrive in the lab.
 
+### Setup 1: Open Cursor
 
-You will take a copy of the skills we have defined on Github so that we can explore some advanced use cases in our lab today.
+Cursor is the sdk platform we will use today with the CJA MCP server. Open it from your application list.
+
+<cursor app bar img>
+
+### Setup 2: Close our Git repository
+
+1. Cursor will open to a black window like this. 
+
+<empty splash screen>
+
+2. Click on the *Clone repo* option.
+
+<clone repo image>
+
+3. In the text bar, paste the following URL:
+
+```
+https://github.com/Adobe-Experience-Cloud/adobe-analytics-mcp-lab
+```
+
+<url in text box>
+
+4. Click *Clone from URL*. This will ease setup as we are downloading some settings and repeatable skills for MCP.
+
+5. Select any location, such as the desktop, for the repo.
+
+<mac finder type window>
+
+Your screen should look similar to this, afterward:
+
+<cursor window>
+
+### Setup 3: Config Cursor
+
+1. Open an agent chat via ______.
+
+<image of agent chat open button>
+
+2. Paste this prompt into chat so Cursor will find the CJA MCP server info.
+
+```
+Add my cja mcp server to the global Cursor settings.
+```
+
+<image>
+
+This should process quickly, a few seconds only. Instead of clicking into Settings and pasting, we are using the downloaded files and the Composer agent in Cursor to automate setup.
+
+3. Submit this prompt to open web authentication for CJA.
+
+```
+Authenticate to CJA using mcp_auth.
+```
+
+<image>
+
+As before, this should only take a few seconds. Cursor will hopefully make a call and produce this interactive result for you. Click *Authenticate*:
+
+<image of process>
+
+4. On web auth, select *Experience Showcase* (if asked) and click OK.
+
+<image of org choice>
+
+<image of final ok screen>
+
+Now, Cursor should say some positive comments about being connected. If so, try asking it to confirm the connection is active with a prompt like this:
+
+```
+What data views can I access?
+```
+
+If you see a list (a small list), then you are ready! Leave this window alone until we get to the MCP tasks in a few minutes.
+
+**Problems connecting?**
+If any of the steps above didn't work, here are the manual click instructions to ensure you are setup for Cursor.
+
+### Manual setup instructions ###
+
+.... INSTRUCTIONS WILL GO HERE - SETTINGS > MCP, CONNECT, ETC. ....
+
 
 ---
 
