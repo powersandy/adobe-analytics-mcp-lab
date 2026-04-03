@@ -120,11 +120,11 @@ https://github.com/Adobe-Experience-Cloud/adobe-analytics-mcp-lab
 
 3. Select any location, such as the desktop, for the repo to be saved.
 
-<mac finder type window>
+*IMAGE:mac finder type window*
 
 Your screen should look similar to this, afterward:
 
-<cursor window>
+*IMAGE:cursor window*
 
 ### Setup 3: Config Cursor
 
@@ -132,7 +132,7 @@ Now, we just need to tell Cursor how to reach CJA and help us connect.
 
 1. Open an agent chat via ______.
 
-<image of agent chat open button>
+*IMAGE:agent chat open button*
 
 2. Paste this prompt into chat so Cursor use the CJA MCP server info from our download.
 
@@ -158,7 +158,7 @@ As before, this should only take a few seconds. Cursor will hopefully make a cal
 
 4. On web auth, select *Experience Showcase* (if asked) and click OK.
 
-<image of org choice>
+*IMAGE: org choice*
 
 5. On the following screen, click *Allow access*:
 
