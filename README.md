@@ -100,29 +100,25 @@ To prepare our environment today using *Cursor* we have a few setup steps to fol
 
 Cursor is the sdk platform we will use today with the CJA MCP server. Open it from your application list.
 
-<cursor app bar img>
+<img width="168" height="38" alt="Screenshot 2026-04-03 141758" src="https://github.com/user-attachments/assets/7761c37c-bf73-475e-984a-a61a7b206a16" />
 
-### Setup 2: Close our Git repository
+### Setup 2: Clone our Git repository
 
-1. Cursor will open to a black window like this. 
+This step is a simple way to download files we need. In Github, the terminology is that we are cloning a public repository.
 
-<empty splash screen>
+1. Cursor will open to a black window like this. Click on the *Clone repo* option.
 
-2. Click on the *Clone repo* option.
+<img width="448" height="179" alt="Screenshot 2026-04-03 142109" src="https://github.com/user-attachments/assets/d31260ff-eccf-459f-b4e8-739c534224a2" />
 
-<clone repo image>
-
-3. In the text bar, paste the following URL:
+2. In the text bar that has appeared, paste the following URL and click *Clone from URL*.
 
 ```
 https://github.com/Adobe-Experience-Cloud/adobe-analytics-mcp-lab
 ```
 
-<url in text box>
+<img width="799" height="365" alt="Screenshot 2026-04-03 142349" src="https://github.com/user-attachments/assets/523a73e3-d6d3-4e20-acdc-50bfc0760d54" />
 
-4. Click *Clone from URL*. This will ease setup as we are downloading some settings and repeatable skills for MCP.
-
-5. Select any location, such as the desktop, for the repo.
+3. Select any location, such as the desktop, for the repo to be saved.
 
 <mac finder type window>
 
@@ -132,19 +128,21 @@ Your screen should look similar to this, afterward:
 
 ### Setup 3: Config Cursor
 
+Now, we just need to tell Cursor how to reach CJA and help us connect.
+
 1. Open an agent chat via ______.
 
 <image of agent chat open button>
 
-2. Paste this prompt into chat so Cursor will find the CJA MCP server info.
+2. Paste this prompt into chat so Cursor use the CJA MCP server info from our download.
 
 ```
 Add my cja mcp server to the global Cursor settings.
 ```
 
-<image>
+<img width="479" height="89" alt="image" src="https://github.com/user-attachments/assets/68c09b22-04b5-4cf1-8bc4-0ed4fd7fd990" />
 
-This should process quickly, a few seconds only. Instead of clicking into Settings and pasting, we are using the downloaded files and the Composer agent in Cursor to automate setup.
+This should process quickly, taking only a few seconds. Instead of clicking through Settings menus, we are using the downloaded files and the Composer agent in Cursor to automate setup.
 
 3. Submit this prompt to open web authentication for CJA.
 
@@ -152,25 +150,27 @@ This should process quickly, a few seconds only. Instead of clicking into Settin
 Authenticate to CJA using mcp_auth.
 ```
 
-<image>
+<img width="467" height="62" alt="image" src="https://github.com/user-attachments/assets/7916f768-6d3a-4cdc-9124-88af0b779f8a" />
 
 As before, this should only take a few seconds. Cursor will hopefully make a call and produce this interactive result for you. Click *Authenticate*:
 
-<image of process>
+<img width="697" height="353" alt="image" src="https://github.com/user-attachments/assets/b30325e0-4e10-4a4b-83f1-1d056a196a36" />
 
 4. On web auth, select *Experience Showcase* (if asked) and click OK.
 
 <image of org choice>
 
-<image of final ok screen>
+5. On the following screen, click *Allow access*:
 
-Now, Cursor should say some positive comments about being connected. If so, try asking it to confirm the connection is active with a prompt like this:
+<img width="415" height="581" alt="AdobeExpressPhotos_486ff0ad00d24182acd15b96b99c631a_CopyEdited" src="https://github.com/user-attachments/assets/43308710-2916-40fe-a2bc-1bbb0ce4ce6e" />
+
+Now, Cursor should say some positive comments about being connected. If so, you can confirm the connection to CJA is active with a prompt like this:
 
 ```
 What data views can I access?
 ```
 
-If you see a list (a small list), then you are ready! Leave this window alone until we get to the MCP tasks in a few minutes.
+If Cursor returns a small list including the L611 data view, then you are ready! *Leave the Cursor app alone until we get to the MCP tasks in a few minutes.*
 
 **Problems connecting?**
 If any of the steps above didn't work, here are the manual click instructions to ensure you are setup for Cursor.
