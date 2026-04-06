@@ -315,7 +315,7 @@ Take a moment to answer these before moving on:
 
 ---
 
-## 2 — Intro to CJA MCP Server
+## 2 — Intro to CJA MCP Server and project builder
 
 est completion: 10 min
 
@@ -328,7 +328,7 @@ By the end of this lesson you will be able to:
 - Explain what MCP is and how it enables AI-to-CJA connectivity
 - Connect Cursor to the CJA MCP Server
 - Verify that CJA tools are available in an Agent chat
-- Create a simple CJA project using natural language
+- Create simple and advanced CJA projects using natural language
 
 ### 2.2 What is MCP?
 
@@ -354,105 +354,90 @@ Instead of navigating Analysis Workspace manually, you describe what you want: *
 
 In the CJA UI, there is a feature called Data Insights Agent or AI Assistant. It will answer simple information requests, report updates, etc. but only within your CJA/AEP context. The MCP server facilitates those too, but it is the power of the chat agent you use which takes it farther. You can give an AI like ChatGPT a complex prompt, with external references, instructing it to generate a unique CJA report app for you. This lab will explore the possibilities.
 
+AI Assistant and Data Insights Agent in CJA:
+<img width="858" height="736" alt="AI Assistant and Data Insights Agent" src="https://github.com/user-attachments/assets/0bdd9adf-0ae1-46de-a34d-c8c0471e85fc" />
 
+### 2.3 What are **skills**?
+**Skills** represents the way you can share task or context knowledge across instances of an AI chat. After wrestling an AI to doing something just the way you want it, you can ask it to save the capability as a skill, in hopes that it will be repeatable and shareable when you or another opens a brand new AI conversation.
 
-<image of CJA app for contrast - maybe>
+Skills are the sheet of notes that you give to an AI to help it replicate a scenario it doesn't know.
 
-### 2.3 Connect to the CJA MCP Server
+### 2.4 Project builder skill
 
-The steps we are about to complete is ALL that is needed to set up the environment for conversational work in CJA. 
+With the MCP server connected, you can describe what you want to analyze and let the agent build it. The server provides a minimal framework to the LLM that connects to it: pull reports like this, update projects like that, etc. No additional context is needed - yet there are nuances that experienced analysts know that AI might miss.
 
-1. Open **Cursor**
-2. Navigate to **File → Preferences → Cursor Settings → Tools & MCP → Add New MCP Server**
-3. An editor opens with `mcp.json`. Replace its contents entirely with the following:
-  ```json
-   {
-     "mcpServers": {
-       "cja": {
-         "type": "streamable-http",
-         "url": "https://mcp-gateway.adobe.io/cja/mcp"
-       }
-     }
-   }
-  ```
-4. Now save the file.
-5. Back in **Settings → Tools & MCP**, find the **CJA** server entry and click **Connect**
-6. A dialog asks for permission to open the authentication page — click **Open**
-7. Your browser opens the Adobe Experience Platform login page. Click ok.
-8. Return to Cursor. The CJA server entry should now show as connected, with tools listed below it.
-9. Click to toggle the CJA server disabled and then enabled, to ensure agent has access in our current session.
+So, to aid repeatability and demonstrations in our lab, we have defined the `cja-project-builder` **skill**. It guides the agent through a structured workflow: it discovers your available components, assembles a complete project definition, and calls `upsertProject` to create the workspace in CJA. For advanced, specific, repeatable tasks, skills can give us helpful guardrails and *repeatability* (usually). To show cool things and keep attendees' instances on the same track, we will use skills. 
 
-> **Note:** Any MCP-capable OAuth client — Codex, Claude.ai, ChatGPT — connects to the same URL using the same authentication pattern. Only the configuration UI differs by client.
+> **Note:** For our lab today, we suggest using the prompts listed and following along. If you want to try something additional, use a separate agent chat so that you can still explore the prepared skills and ideas we have. The lab goal is to show a breadth of possibilities with *reasonably consistent* exercises, but in practice, iterations are typically required.
 
-**Verify your connection:**
+1. Open a new agent chat.
 
-1. Open a new Agent chat (use the chat panel or press the keyboard shortcut)
-2. Type: `Are my CJA tools connected?`
-3. The agent should respond with a list of available tools — there are 26 in total.
+<img width="155" height="152" alt="AdobeExpressPhotos_a9aeb23ad3c14d3c85fd6ebfcc3cdfd5_CopyEdited" src="https://github.com/user-attachments/assets/584a0ad2-38ca-4131-9264-afab80fd42ed" />
 
-**Add skills:**
-
-1. Provide a link to the skills folder you downloaded from Github into your agent chat in Cursor.
-2. Tell it to `install these skills`.
-3. Await confirmation.
-
-Now, we can proceed and explore exciting new use cases!
-
-Lesson 3: Project curation with MCP
-
-### 3.1 Exercise: Create a Workspace with Natural Language
-
-With the MCP server connected, you can describe what you want to analyze and let the agent build it. The `cja-project-builder` **skill** guides the agent through a structured workflow: it discovers your available components, assembles a complete project definition, and calls `upsertProject` to create the workspace in CJA. No dragging panels. No hunting for metric IDs.
-
-> **Note:** The MCP server provides a minimal framework to an LLM that contacts it: pull reports like this, update projects like that, etc. For advanced, customized, repeatable tasks, we can add 'skills' to our LLM for additional context. These skills will be used throughout the lab.
-
-**Follow these prompts in order:**
-
-1. Open a new Agent chat
-2. Load the project builder skill through natural language or by invoking it excplicitly:
-  ```
-   Please make/build a CJA project...
-
-   Use @cja-project-builder...
-  ```
-3. **Prompt — Basic project create**
-  ```
-   Make a simple CJA project.
-  ```
-   The agent uses a basic definition framework to create a project and return its link.
-4. **Prompt 1 — Discover your environment:**
-
+2. Specify the data view for our session with this prompt:
 ```
-What data views do I have access to?
+Set L611 as my default data view for this session.
 ```
 
-The agent calls `findDataViews` and returns a list. We have only one for this lab.
-4. **Prompt 2 — Set your default data view:**
+<img width="1070" height="174" alt="AdobeExpressPhotos_8155baefdfad4ad09ecaae450a2e324a_CopyEdited" src="https://github.com/user-attachments/assets/7cfcd234-9748-42d3-bb4a-b157c81aa441" />
 
-   The agent calls `setDefaultSessionDataViewId` — now every subsequent tool call uses this data view by default.
-5. **Prompt 3 — Ask a data question:**
-   Let's start simple to demonstrate its context inference and basic flow.
+The agent calls `setDefaultSessionDataViewId` — now every subsequent tool call uses this data view by default. This is a proactive call, as the AI would have asked us directly as needed.
 
-   The agent looks for context, trying to do something useful and relevant to your task. The request was for information based on report data, so it identified the components and ran CJA reports to give the answer.
+3. Create a basic CJA project with this prompt:
+```
+Make a simple CJA project.
+```
 
-1. **Prompt — Create a project:**
-  The MCP server functions include project creation. Let's ask it to make that report into a project.
-   For initial project create, the LLM consults references and examples. 
-   The agent responds with a proposed structure — panels, visualizations, dimensions, metrics - based on your prompt. 
-2. **Prompt - follow-ups**
-  Try followups. Less context is needed in the active chat.
+<img width="786" height="199" alt="AdobeExpressPhotos_6539e90f9a394454ab16297ae7b557b9_CopyEdited" src="https://github.com/user-attachments/assets/24e931ab-94e4-4650-80f6-5a0f9feefd28" />
 
-> **Tip:** Be specific in your prompts. Include time ranges ("last 30 days"), metric names ("orders", "revenue"), and dimensions ("product category") when you know them.
+> **Note:** This will use our project builder skill. They are naturally identified by the AI based on their definition (or you may invoke it explicitly by skillname). In our Cursor environment, if we use phrases like *make/build a CJA project* or reference `@cja-project-builder`, the agent will follow the skill to address the prompt.
 
-1. **Prompt - tedious/manual create tasks**
-  Sometimes I work with a data view that I know little about. I can ask its owner questions, sometimes, but often I prefer to just peek at the components - especially the most used ones. But that is a tough task to manually drag in and copy so many components. It's a visionary task that LLMs + CJA mcp server can enable.
+The agent uses a basic definition framework to create a project and return its link.
 
-A. **Other prompts and sample results**
-   You may try these but sometimes they will require a few minutes, per their complexity.
+4. Let's ask a data question:
+```
+How many people saw each azb product in March?
+```
 
+This is a followup from our data mirror example. We are a little vague, intentionally, to demonstrate how the system processes and infers context. The LLM can respond with CJA data directly in our chat.
 
+<img width="668" height="178" alt="AdobeExpressPhotos_1a34beef47cd40d68255a522bf65b6eb_CopyEdited" src="https://github.com/user-attachments/assets/62d5a583-af0b-4661-a37e-240148af1ac1" />
 
-> **Two modes available:** The project builder works in two modes. **Template mode** (what you just did): describe a project type and the agent builds from a predefined structure. **Clone mode**: copy an existing project and adapt it — *"Copy the [Project Name] project and adapt it for the [Other Data View]"* — the agent calls `describeProject`, swaps the data view, replaces component IDs as needed, and creates a new copy.
+Your results will likely include a text representation of the product names and people counts.
+
+<img width="855" height="305" alt="image" src="https://github.com/user-attachments/assets/85817e12-394d-4428-a969-104aa8ec0349" />
+
+5. Save that report into a new project:
+```
+Save this in a project and give me the link.
+```
+
+<img width="1074" height="565" alt="AdobeExpressPhotos_0f2f44fbabe24d8bbf8614199feaa187_CopyEdited" src="https://github.com/user-attachments/assets/f1643179-05a4-4a97-b35f-effc14b5d836" />
+   
+6. Let it create a more interesting CJA project:
+```
+Create an e-commerce performance dashboard for the Luma retail data. Show revenue, orders, and conversion rate for the last 30 days, broken down by product category. Include a line chart for the daily revenue trend.
+```
+
+The agent responds with a proposed structure and builds it. It uses context from your skills, chat, common reporting and ecommerce knowledge, and existing components in CJA. Panels, visualizations, dimensions, metrics are all driven through that lens. 
+
+Hopefully, your result takes only a minute or two. The timing and result will vary with AI. If something looks wrong or your want a change, you would continue the conversation. Most often, even skill-based results require iterations to reach your exact goal.
+
+> **Tip:** Be specific in your prompts. Whenever possible, use clear time ranges ("last 30 days"), metric names ("orders", "revenue"), and dimensions ("product category") when you know them.
+
+7. Prepare a component survey project:
+```
+Build a survey for the top 15 dimensions in L611.
+```
+
+This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. The directions tell it to ignore the generic time or out-of-the-box dimensions. It can also pull only fields with at least two elements (not No Value).
+
+I always wanted to build something like this. However, the volume of manual and tedious duplication activity in the UI prevented it - not to mention sorting by usage! It has been successful for approximately 60 dimensions and many panels.
+
+It may take a few minutes but when running in the background it feels like no time. This skill was the product of *many* iterative conversations, as is common.
+
+> **Tip:** What manual or tedious tasks could this system build for you? Don't force a use case onto the feature, but dream big when scale and manual tasks are a blocker.
+
 
 ### 2.5 Checkpoint
 
@@ -461,11 +446,6 @@ Discuss or reflect:
 - Building that workspace manually would take 20–30 minutes. What would you build first for your own team using this approach?
 - The agent called several MCP tools in sequence: `findDataViews`, `setDefaultSessionDataViewId`, `findMetrics`, `findDimensions`, `upsertProject`. You didn't need to know any of those tool names. What does that tell you about how MCP changes the analyst workflow?
 - What's one thing you'd want to add to the workspace you just created?
-
----
-
-- Create a CJA Analysis Workspace project using natural language prompts
-- Distinguish between Template mode and Clone mode in the project builder
 
 ---
 
