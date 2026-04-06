@@ -430,9 +430,11 @@ Hopefully, your result takes only a minute or two. The timing and result will va
 Build a survey for the top 15 dimensions in L611.
 ```
 
-This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. The directions tell it to ignore the generic time or out-of-the-box dimensions and that I don't want to see any fields without data.
+This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. The directions tell it to ignore the generic time or out-of-the-box dimensions. It can also pull only fields with at least two elements (not No Value).
 
-I have always wanted to build something like this. However, the volume of manual and tedious duplication activity in the UI prevented it - not to mention sorting by usage!
+I always wanted to build something like this. However, the volume of manual and tedious duplication activity in the UI prevented it - not to mention sorting by usage! It has been successful for approximately 60 dimensions and many panels.
+
+It may take a few minutes but when running in the background it feels like no time. This skill was the product of *many* iterative conversations, as is common.
 
 > **Tip:** What manual or tedious tasks could this system build for you? Don't force a use case onto the feature, but dream big when scale and manual tasks are a blocker.
 
@@ -444,11 +446,6 @@ Discuss or reflect:
 - Building that workspace manually would take 20–30 minutes. What would you build first for your own team using this approach?
 - The agent called several MCP tools in sequence: `findDataViews`, `setDefaultSessionDataViewId`, `findMetrics`, `findDimensions`, `upsertProject`. You didn't need to know any of those tool names. What does that tell you about how MCP changes the analyst workflow?
 - What's one thing you'd want to add to the workspace you just created?
-
----
-
-- Create a CJA Analysis Workspace project using natural language prompts
-- Distinguish between Template mode and Clone mode in the project builder
 
 ---
 
