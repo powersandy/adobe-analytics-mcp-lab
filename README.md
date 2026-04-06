@@ -368,7 +368,7 @@ With the MCP server connected, you can describe what you want to analyze and let
 
 So, to aid repeatability and demonstrations in our lab, we have defined the `cja-project-builder` **skill**. It guides the agent through a structured workflow: it discovers your available components, assembles a complete project definition, and calls `upsertProject` to create the workspace in CJA. For advanced, specific, repeatable tasks, skills can give us helpful guardrails and *repeatability* (usually). To show cool things and keep attendees' instances on the same track, we will use skills. 
 
-> **Note:** The git repo with our skill definitions is publicly available. Try them, edit them, improve them for your purposes and share them with colleagues.
+> **Note:** For our lab today, we suggest using the prompts listed and following along. If you want to try something additional, use a separate agent chat so that you can still explore the prepared skills and ideas we have. The lab goal is to show a breadth of possibilities with *reasonably consistent* exercises, but in practice, iterations are typically required.
 
 1. Open a new agent chat.
 
@@ -414,30 +414,26 @@ Save this in a project and give me the link.
 
 <img width="1074" height="565" alt="AdobeExpressPhotos_0f2f44fbabe24d8bbf8614199feaa187_CopyEdited" src="https://github.com/user-attachments/assets/f1643179-05a4-4a97-b35f-effc14b5d836" />
    
-6. Create a more interesting CJA project:
+6. Let it create a more interesting CJA project:
 ```
 Create an e-commerce performance dashboard for the Luma retail data. Show revenue, orders, and conversion rate for the last 30 days, broken down by product category. Include a line chart for the daily revenue trend.
 ```
 
 The agent responds with a proposed structure and builds it. It uses context from your skills, chat, common reporting and ecommerce knowledge, and existing components in CJA. Panels, visualizations, dimensions, metrics are all driven through that lens. 
 
-The agent returns a project link and context, hopefully after a minute or two. Open the link in your browser and review it. If something looks wrong, that's normal with AI. Most often, even skill-based results require iterations to reach your exact goal.
+Hopefully, your result takes only a minute or two. The timing and result will vary with AI. If something looks wrong or your want a change, you would continue the conversation. Most often, even skill-based results require iterations to reach your exact goal.
 
-> **Note:** For our lab today, we suggest using the prompts listed and following along. If you want to try something additional, use a separate agent chat so that you can still explore the prepared skills and ideas we have. The lab goal is to show a breadth of possibilities with *reasonably consistent* exercises, but in practice iterations are typically required.
+> **Tip:** Be specific in your prompts. Whenever possible, use clear time ranges ("last 30 days"), metric names ("orders", "revenue"), and dimensions ("product category") when you know them.
 
-> **Tip:** Be specific in your prompts. Include time ranges ("last 30 days"), metric names ("orders", "revenue"), and dimensions ("product category") when you know them.
+7. Prepare a component survey project:
+```
+Build a survey for the top 15 dimensions in L611.
+```
 
-7. Consider special purpose skills 
+This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. It saves a great deal of manual and tedious duplication activity in the UI.
 
-1. **Prompt - tedious/manual create tasks**
-  Sometimes I work with a data view that I know little about. I can ask its owner questions, sometimes, but often I prefer to just peek at the components - especially the most used ones. But that is a tough task to manually drag in and copy so many components. It's a visionary task that LLMs + CJA mcp server can enable.
+> **Tip:** What manual or tedious tasks could this system build for you? Don't force a use case onto the feature, but dream big when scale and manual tasks are a blocker.
 
-A. **Other prompts and sample results**
-   You may try these but sometimes they will require a few minutes, per their complexity.
-
-
-
-> **Two modes available:** The project builder works in two modes. **Template mode** (what you just did): describe a project type and the agent builds from a predefined structure. **Clone mode**: copy an existing project and adapt it — *"Copy the [Project Name] project and adapt it for the [Other Data View]"* — the agent calls `describeProject`, swaps the data view, replaces component IDs as needed, and creates a new copy.
 
 ### 2.5 Checkpoint
 
