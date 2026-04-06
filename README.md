@@ -426,6 +426,8 @@ Hopefully, your result takes only a minute or two. The timing and result will va
 > **Tip:** Be specific in your prompts. Whenever possible, use clear time ranges ("last 30 days"), metric names ("orders", "revenue"), and dimensions ("product category") when you know them.
 
 7. Prepare a component survey project:
+
+> **Note:** This will take a few minutes to run. We will continue into the lab, so you may open a new agent chat while this runs.
 ```
 Build a survey for the top 15 dimensions in L611.
 ```
@@ -434,7 +436,7 @@ This will use a skill we named *dimension survey*. It addresses a common use cas
 
 I always wanted to build something like this. However, the volume of manual and tedious duplication activity in the UI prevented it - not to mention sorting by usage! It has been successful for approximately 60 dimensions and many panels.
 
-It may take a few minutes but when running in the background it feels like no time. This skill was the product of *many* iterative conversations, as is common.
+It may take a few minutes but when running in the background it feels fast. This skill was the product of *many* iterative conversations, as is common.
 
 > **Tip:** What manual or tedious tasks could this system build for you? Don't force a use case onto the feature, but dream big when scale and manual tasks are a blocker.
 
