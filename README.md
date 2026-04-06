@@ -430,7 +430,9 @@ Hopefully, your result takes only a minute or two. The timing and result will va
 Build a survey for the top 15 dimensions in L611.
 ```
 
-This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. It saves a great deal of manual and tedious duplication activity in the UI.
+This will use a skill we named *dimension survey*. It addresses a common use case: working with a connection or data view I know little about. It finds the most used components and prepares a compact and organized view of them. The directions tell it to ignore the generic time or out-of-the-box dimensions and that I don't want to see any fields without data.
+
+I have always wanted to build something like this. However, the volume of manual and tedious duplication activity in the UI prevented it - not to mention sorting by usage!
 
 > **Tip:** What manual or tedious tasks could this system build for you? Don't force a use case onto the feature, but dream big when scale and manual tasks are a blocker.
 
